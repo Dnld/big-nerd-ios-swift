@@ -1,1 +1,1 @@
-The examples and challenges in BNR's iOS Programming (4th Edition) are entirely in Objective-C.  This repo refactors the examples and completes the challenges in Swift.
+The examples and challenges in BNR's iOS Programming (4th Edition) are entirely in Objective-C.  Using Swift, I refactored the examples and completed the challenges.
