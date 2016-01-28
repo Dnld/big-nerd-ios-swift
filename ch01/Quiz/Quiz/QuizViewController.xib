@@ -17,19 +17,22 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5j-Rn-5Of">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5j-Rn-5Of">
                     <rect key="frame" x="8" y="76" width="584" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="wU2-2Q-pat"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybs-9G-e0x">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybs-9G-e0x">
                     <rect key="frame" x="8" y="254" width="584" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iB-wR-Bl1">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iB-wR-Bl1">
                     <rect key="frame" x="8" y="283" width="584" height="30"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" title="Show Answer"/>
@@ -37,7 +40,7 @@
                         <action selector="showAnswer:" destination="-1" eventType="touchUpInside" id="JAc-ZE-3kO"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83l-Nb-p2G">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="83l-Nb-p2G">
                     <rect key="frame" x="8" y="105" width="584" height="30"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" title="Show Question"/>
@@ -47,6 +50,24 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="K5j-Rn-5Of" firstAttribute="leading" secondItem="8iB-wR-Bl1" secondAttribute="leading" id="1DI-fL-YKQ"/>
+                <constraint firstItem="8iB-wR-Bl1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="AzN-02-xpe"/>
+                <constraint firstItem="Ybs-9G-e0x" firstAttribute="top" secondItem="83l-Nb-p2G" secondAttribute="bottom" constant="119" id="CIX-Qe-ViY"/>
+                <constraint firstItem="Ybs-9G-e0x" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="DaE-mv-tTV"/>
+                <constraint firstItem="83l-Nb-p2G" firstAttribute="top" secondItem="K5j-Rn-5Of" secondAttribute="bottom" constant="8" symbolic="YES" id="IXm-k9-z4n"/>
+                <constraint firstItem="K5j-Rn-5Of" firstAttribute="trailing" secondItem="Ybs-9G-e0x" secondAttribute="trailing" id="KaC-9e-uTA"/>
+                <constraint firstItem="8iB-wR-Bl1" firstAttribute="top" secondItem="Ybs-9G-e0x" secondAttribute="bottom" constant="8" id="Lii-mM-0H5"/>
+                <constraint firstItem="83l-Nb-p2G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="MKr-gX-6M7"/>
+                <constraint firstItem="K5j-Rn-5Of" firstAttribute="leading" secondItem="83l-Nb-p2G" secondAttribute="leading" id="S5G-tj-QJe"/>
+                <constraint firstAttribute="trailing" secondItem="8iB-wR-Bl1" secondAttribute="trailing" constant="8" id="XY5-FR-cB3"/>
+                <constraint firstItem="K5j-Rn-5Of" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="76" id="Xxa-vd-O4a"/>
+                <constraint firstAttribute="trailing" secondItem="83l-Nb-p2G" secondAttribute="trailing" constant="8" id="YaA-Te-bj1"/>
+                <constraint firstItem="K5j-Rn-5Of" firstAttribute="trailing" secondItem="8iB-wR-Bl1" secondAttribute="trailing" id="asd-aT-naS"/>
+                <constraint firstItem="K5j-Rn-5Of" firstAttribute="leading" secondItem="Ybs-9G-e0x" secondAttribute="leading" id="iIQ-xC-rkX"/>
+                <constraint firstItem="K5j-Rn-5Of" firstAttribute="trailing" secondItem="83l-Nb-p2G" secondAttribute="trailing" id="omy-Gr-Tb5"/>
+                <constraint firstAttribute="trailing" secondItem="Ybs-9G-e0x" secondAttribute="trailing" constant="8" id="rX3-EL-9zj"/>
+            </constraints>
             <point key="canvasLocation" x="430" y="460"/>
         </view>
     </objects>
