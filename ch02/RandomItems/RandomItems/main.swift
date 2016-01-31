@@ -72,3 +72,7 @@ if let item = items.last {
 
 // produces an error -- item out of range
 //print(items[11])
+
+let container = BNRContainer(name: "Big Nerd Container")
+items.forEach { container.addItem($0) }
+print(container)
