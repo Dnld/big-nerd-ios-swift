@@ -76,3 +76,12 @@ if let item = items.last {
 let container = BNRContainer(name: "Big Nerd Container")
 items.forEach { container.addItem($0) }
 print(container)
+
+var tempItem: BNRItem? = BNRItem()
+print(tempItem!)
+items.append(tempItem!)
+tempItem = nil
+print(items.last!)
+print(tempItem)
+// temp item finally destroyed when all references are removed
+items.removeLast()

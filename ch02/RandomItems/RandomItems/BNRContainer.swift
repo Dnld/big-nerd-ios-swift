@@ -28,6 +28,10 @@ class BNRContainer: BNRItem {
         subitems.append(item)
     }
     
+    func removeItem(index: Int) {
+        subitems.removeAtIndex(index)
+    }
+    
     func getItemAtIndex(index: Int) -> BNRItem {
         return subitems[index]
     }

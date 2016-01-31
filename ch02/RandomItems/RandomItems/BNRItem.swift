@@ -55,4 +55,8 @@ class BNRItem: CustomStringConvertible {
         
         return newItem
     }
+    
+    deinit {
+        print("Destroyed \(self)")
+    }
 }
