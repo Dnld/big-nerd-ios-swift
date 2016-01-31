@@ -77,11 +77,19 @@ let container = BNRContainer(name: "Big Nerd Container")
 items.forEach { container.addItem($0) }
 print(container)
 
-var tempItem: BNRItem? = BNRItem()
-print(tempItem!)
-items.append(tempItem!)
+// eperimentation with ARC
+//var tempItem: BNRItem? = BNRItem()
+//print(tempItem!)
+//items.append(tempItem!)
+//tempItem = nil
+//print(items.last!)
+//print(tempItem)
+//// temp item finally destroyed when all references are removed
+//items.removeLast()
+
+// with a weak reference from the item to its container, the item can be destroyed
+var tempItem: BNRItem? = BNRItem(name: "Temp")
+container.addItem(tempItem!)
+print(tempItem?.container)
+container.removeItem(10)
 tempItem = nil
-print(items.last!)
-print(tempItem)
-// temp item finally destroyed when all references are removed
-items.removeLast()

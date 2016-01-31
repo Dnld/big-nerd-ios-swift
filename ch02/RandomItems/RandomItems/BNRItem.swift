@@ -20,6 +20,7 @@ class BNRItem: CustomStringConvertible {
     var serialNumber: String
     var valueInDollars: Int
     let date: NSDate
+    var container: BNRContainer?
     
     var description: String {
         return "Item: \(name), with serial number: \(serialNumber), is worth $\(valueInDollars) and was created on \(date)"

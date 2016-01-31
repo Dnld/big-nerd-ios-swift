@@ -9,12 +9,12 @@
 import Foundation
 
 class BNRContainer: BNRItem {
-    private var subitems: [BNRItem]
+    private var subitems: [BNRItem?]
     
     override var description: String {
         var totalValue = valueInDollars
         for item in subitems {
-            totalValue += item.valueInDollars
+            totalValue += item!.valueInDollars
         }
         return "Container \(name) is worth $\(totalValue)"
     }
@@ -26,6 +26,7 @@ class BNRContainer: BNRItem {
     
     func addItem(item: BNRItem) {
         subitems.append(item)
+        item.container = self
     }
     
     func removeItem(index: Int) {
@@ -33,7 +34,7 @@ class BNRContainer: BNRItem {
     }
     
     func getItemAtIndex(index: Int) -> BNRItem {
-        return subitems[index]
+        return subitems[index]!
     }
     
 }
