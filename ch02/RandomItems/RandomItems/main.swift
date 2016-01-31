@@ -31,3 +31,25 @@ items.insert("Zero", atIndex: 0)
 //}
 
 items.forEach() {print($0)}
+
+//var item: BNRItem? = BNRItem(name: "Item", serialNumber: "33", valueInDollars: 5, date: NSDate())
+var item: BNRItem? = BNRItem(name: "Thing", serialNumber: "4", valueInDollars: 6)
+print("\(item!.name) \(item!.serialNumber) \(item!.valueInDollars) \(item!.date)")
+
+print(item!)
+
+item = nil
+
+print(item)
+
+let itemInNameOnly = BNRItem(name: "Another")
+print(itemInNameOnly)
+
+let unknownItem = BNRItem()
+print(unknownItem)
+
+let randomItem = BNRItem.randomItem()
+print(randomItem)
+
+print(BNRItem.randomItem())
+print(BNRItem.randomItem())
