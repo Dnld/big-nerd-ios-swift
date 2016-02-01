@@ -39,9 +39,8 @@ class BNRHypnosisView: UIView {
         UIColor.lightGrayColor().setStroke()
         path.stroke()
         
-        let logoImage = UIImage(named: "logo.png")
-        logoImage?.drawInRect(rect)
-        
+//        let logoImage = UIImage(named: "logo.png")
+//        logoImage?.drawInRect(rect)
     }
 
 }
