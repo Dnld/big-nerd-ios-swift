@@ -8,19 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BNRHypnosisViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = BNRHypnosisView()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let frame = UIScreen.mainScreen().bounds
+        let backgroundView = BNRHypnosisView.init(frame: frame)
+        view = backgroundView
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 

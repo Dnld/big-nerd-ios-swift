@@ -15,8 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        // Override point for customization after application launch
         window?.backgroundColor = UIColor.whiteColor()
+        let hvc = BNRHypnosisViewController()
+        window?.rootViewController = hvc
         return true
     }
 

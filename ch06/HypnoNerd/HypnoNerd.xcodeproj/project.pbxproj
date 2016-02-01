@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6A5493881C5FF8A4007CE87F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5493871C5FF8A4007CE87F /* AppDelegate.swift */; };
-		6A54938A1C5FF8A4007CE87F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5493891C5FF8A4007CE87F /* ViewController.swift */; };
+		6A54938A1C5FF8A4007CE87F /* BNRHypnosisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5493891C5FF8A4007CE87F /* BNRHypnosisViewController.swift */; };
 		6A54938D1C5FF8A4007CE87F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A54938B1C5FF8A4007CE87F /* Main.storyboard */; };
 		6A54938F1C5FF8A4007CE87F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A54938E1C5FF8A4007CE87F /* Assets.xcassets */; };
 		6A5493921C5FF8A4007CE87F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A5493901C5FF8A4007CE87F /* LaunchScreen.storyboard */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		6A5493841C5FF8A4007CE87F /* HypnoNerd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HypnoNerd.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A5493871C5FF8A4007CE87F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6A5493891C5FF8A4007CE87F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6A5493891C5FF8A4007CE87F /* BNRHypnosisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BNRHypnosisViewController.swift; sourceTree = "<group>"; };
 		6A54938C1C5FF8A4007CE87F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6A54938E1C5FF8A4007CE87F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A5493911C5FF8A4007CE87F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			children = (
 				6A5493991C5FF8C6007CE87F /* BNRHypnosisView.swift */,
 				6A5493871C5FF8A4007CE87F /* AppDelegate.swift */,
-				6A5493891C5FF8A4007CE87F /* ViewController.swift */,
+				6A5493891C5FF8A4007CE87F /* BNRHypnosisViewController.swift */,
 				6A54938B1C5FF8A4007CE87F /* Main.storyboard */,
 				6A54938E1C5FF8A4007CE87F /* Assets.xcassets */,
 				6A5493901C5FF8A4007CE87F /* LaunchScreen.storyboard */,
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A54938A1C5FF8A4007CE87F /* ViewController.swift in Sources */,
+				6A54938A1C5FF8A4007CE87F /* BNRHypnosisViewController.swift in Sources */,
 				6A54939A1C5FF8C6007CE87F /* BNRHypnosisView.swift in Sources */,
 				6A5493881C5FF8A4007CE87F /* AppDelegate.swift in Sources */,
 			);
