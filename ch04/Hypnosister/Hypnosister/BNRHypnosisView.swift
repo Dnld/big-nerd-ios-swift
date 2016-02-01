@@ -38,6 +38,10 @@ class BNRHypnosisView: UIView {
         path.lineWidth = 10
         UIColor.lightGrayColor().setStroke()
         path.stroke()
+        
+        let logoImage = UIImage(named: "logo.png")
+        logoImage?.drawInRect(rect)
+        
     }
 
 }
