@@ -24,10 +24,17 @@ class BNRHypnosisView: UIView {
         let centerY = bounds.origin.y + bounds.size.height / 2.0
         let center = CGPointMake(centerX, centerY)
         
-        let radius = min(bounds.size.height, bounds.size.width) / 2.0
+//        let radius = min(bounds.size.height, bounds.size.width) / 2.0
+        let maxRadius = hypot(bounds.size.width, bounds.size.height) / 2.0
         let path = UIBezierPath()
-        path.addArcWithCenter(center, radius: radius, startAngle: 0.0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
+//        path.addArcWithCenter(center, radius: radius, startAngle: 0.0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
 //        path.fill()
+        
+        for (var currentRadius = maxRadius; currentRadius > 0; currentRadius -= 20) {
+            path.moveToPoint(CGPointMake(center.x + currentRadius, center.y))
+            path.addArcWithCenter(center, radius: currentRadius, startAngle: 0.0, endAngle: CGFloat(M_PI * 2.0), clockwise: true)
+        }
+        
         path.lineWidth = 10
         UIColor.lightGrayColor().setStroke()
         path.stroke()
