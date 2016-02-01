@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         screenRect.origin.x += screenRect.size.width
         let anotherView = BNRHypnosisView.init(frame: screenRect)
         view.addSubview(anotherView)
+        scrollView.pagingEnabled = true
         scrollView.contentSize = bigRect.size
         // Do any additional setup after loading the view, typically from a nib.
     }
