@@ -9,17 +9,19 @@
 import UIKit
 
 class BNRHypnosisView: UIView {
-
+    var circleColor: UIColor?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     override func drawRect(rect: CGRect) {
+        circleColor = UIColor.lightGrayColor()
         let centerX = bounds.origin.x + bounds.size.width / 2.0
         let centerY = bounds.origin.y + bounds.size.height / 2.0
         let center = CGPointMake(centerX, centerY)
@@ -36,11 +38,18 @@ class BNRHypnosisView: UIView {
         }
         
         path.lineWidth = 10
-        UIColor.lightGrayColor().setStroke()
+        circleColor!.setStroke()
         path.stroke()
         
 //        let logoImage = UIImage(named: "logo.png")
 //        logoImage?.drawInRect(rect)
     }
 
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        
+        print("success")
+        super.touchesBegan(touches, withEvent: event)
+    }
+
+    
 }
