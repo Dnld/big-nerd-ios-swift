@@ -16,16 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        let firstFrame = CGRectMake(160, 240, 100, 150)
-        let firstView = BNRHypnosisView(frame: firstFrame)
-        firstView.backgroundColor = UIColor.redColor()
+//        let firstFrame = CGRectMake(160, 240, 100, 150)
+        let firstFrame = self.window?.bounds
+        let firstView = BNRHypnosisView(frame: firstFrame!)
+//        firstView.backgroundColor = UIColor.redColor()
         
-        let secondFrame = CGRectMake(20, 30, 50, 50)
-        let secondView = BNRHypnosisView(frame: secondFrame)
-        secondView.backgroundColor = UIColor.blueColor()
+//        let secondFrame = CGRectMake(20, 30, 50, 50)
+//        let secondView = BNRHypnosisView(frame: secondFrame)
+//        secondView.backgroundColor = UIColor.blueColor()
         
         self.window?.addSubview(firstView)
-        firstView.addSubview(secondView)
+//        firstView.addSubview(secondView)
         self.window?.backgroundColor = UIColor.whiteColor()
         self.window?.rootViewController = ViewController()
         
