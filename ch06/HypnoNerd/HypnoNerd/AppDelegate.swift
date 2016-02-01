@@ -18,7 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch
         window?.backgroundColor = UIColor.whiteColor()
         let hvc = BNRHypnosisViewController()
-        window?.rootViewController = hvc
+        
+        let appBundle = NSBundle.mainBundle()
+        let rvc = BNRReminderViewController(nibName: "BNRReminderViewController", bundle: appBundle)
+        
+        window?.rootViewController = rvc
+        
         return true
     }
 
