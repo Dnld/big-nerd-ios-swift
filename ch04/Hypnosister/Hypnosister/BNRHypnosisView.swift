@@ -9,7 +9,11 @@
 import UIKit
 
 class BNRHypnosisView: UIView {
-    var circleColor: UIColor?
+    var circleColor: UIColor? = UIColor.lightGrayColor() {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,7 +25,6 @@ class BNRHypnosisView: UIView {
     }
     
     override func drawRect(rect: CGRect) {
-        circleColor = UIColor.lightGrayColor()
         let centerX = bounds.origin.x + bounds.size.width / 2.0
         let centerY = bounds.origin.y + bounds.size.height / 2.0
         let center = CGPointMake(centerX, centerY)
@@ -46,9 +49,12 @@ class BNRHypnosisView: UIView {
     }
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let red = CGFloat(arc4random() % 100) / 100.0
+        let green = CGFloat(arc4random() % 100) / 100.0
+        let blue = CGFloat(arc4random() % 100) / 100.0
         
-        print("success")
-        super.touchesBegan(touches, withEvent: event)
+        let randomColor = UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+        circleColor = randomColor
     }
 
     
