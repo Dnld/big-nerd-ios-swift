@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         secondView.backgroundColor = UIColor.blueColor()
         
         self.window?.addSubview(firstView)
-        self.window?.addSubview(secondView)
+        firstView.addSubview(secondView)
         self.window?.backgroundColor = UIColor.whiteColor()
         self.window?.rootViewController = ViewController()
         
