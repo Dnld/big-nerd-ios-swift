@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        print(self.window?.userInteractionEnabled)
 //        self.window?.addSubview(firstView)
 //        firstView.addSubview(secondView)
+        
         self.window?.backgroundColor = UIColor.whiteColor()
 //        self.window?.rootViewController = ViewController()
         

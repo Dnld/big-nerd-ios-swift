@@ -12,7 +12,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view = BNRHypnosisView()
+        
+        let screenRect = view.bounds
+        var bigRect = screenRect
+        bigRect.size.width *= 2.0
+        bigRect.size.height *= 2.0
+        
+        let scrollView = UIScrollView.init(frame: bigRect)
+        view = scrollView
+        
+        let hypnosisView = BNRHypnosisView.init(frame: bigRect)
+        view.addSubview(hypnosisView)
+        scrollView.contentSize = bigRect.size
         // Do any additional setup after loading the view, typically from a nib.
     }
 
