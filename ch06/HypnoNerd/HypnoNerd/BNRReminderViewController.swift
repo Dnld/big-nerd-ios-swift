@@ -12,9 +12,19 @@ class BNRReminderViewController: UIViewController {
 
     @IBOutlet weak var datePicker: UIDatePicker?
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        tabBarItem.title = "Reminder"
+        let image = UIImage(named: "Time.png")
+        tabBarItem.image = image
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     @IBAction func addReminder(sender: UIButton) {
         let date = self.datePicker!.date
-        print("Setting a reminder for: \(date)")
     }
     
     override func viewDidLoad() {

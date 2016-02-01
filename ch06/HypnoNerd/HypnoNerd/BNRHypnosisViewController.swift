@@ -10,6 +10,17 @@ import UIKit
 
 class BNRHypnosisViewController: UIViewController {
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        tabBarItem.title = "Hypnotize"
+        let image = UIImage(named: "Hypno.png")
+        tabBarItem.image = image
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -15,6 +15,10 @@
 		6A54939A1C5FF8C6007CE87F /* BNRHypnosisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5493991C5FF8C6007CE87F /* BNRHypnosisView.swift */; };
 		6A68202C1C601BD7008CBD6D /* BNRReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A68202B1C601BD7008CBD6D /* BNRReminderViewController.swift */; };
 		6A68202E1C601D07008CBD6D /* BNRReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A68202D1C601D07008CBD6D /* BNRReminderViewController.xib */; };
+		6AE7AB891C60258B0092FF8F /* Hypno.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AE7AB851C60258B0092FF8F /* Hypno.png */; };
+		6AE7AB8A1C60258B0092FF8F /* Hypno@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AE7AB861C60258B0092FF8F /* Hypno@2x.png */; };
+		6AE7AB8B1C60258B0092FF8F /* Time.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AE7AB871C60258B0092FF8F /* Time.png */; };
+		6AE7AB8C1C60258B0092FF8F /* Time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AE7AB881C60258B0092FF8F /* Time@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		6A5493991C5FF8C6007CE87F /* BNRHypnosisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BNRHypnosisView.swift; path = ../BNRHypnosisView.swift; sourceTree = "<group>"; };
 		6A68202B1C601BD7008CBD6D /* BNRReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNRReminderViewController.swift; sourceTree = "<group>"; };
 		6A68202D1C601D07008CBD6D /* BNRReminderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRReminderViewController.xib; sourceTree = "<group>"; };
+		6AE7AB851C60258B0092FF8F /* Hypno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Hypno.png; sourceTree = "<group>"; };
+		6AE7AB861C60258B0092FF8F /* Hypno@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hypno@2x.png"; sourceTree = "<group>"; };
+		6AE7AB871C60258B0092FF8F /* Time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Time.png; sourceTree = "<group>"; };
+		6AE7AB881C60258B0092FF8F /* Time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Time@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,10 @@
 				6A54938E1C5FF8A4007CE87F /* Assets.xcassets */,
 				6A5493901C5FF8A4007CE87F /* LaunchScreen.storyboard */,
 				6A5493931C5FF8A4007CE87F /* Info.plist */,
+				6AE7AB851C60258B0092FF8F /* Hypno.png */,
+				6AE7AB861C60258B0092FF8F /* Hypno@2x.png */,
+				6AE7AB871C60258B0092FF8F /* Time.png */,
+				6AE7AB881C60258B0092FF8F /* Time@2x.png */,
 			);
 			path = HypnoNerd;
 			sourceTree = "<group>";
@@ -133,8 +145,12 @@
 			files = (
 				6A5493921C5FF8A4007CE87F /* LaunchScreen.storyboard in Resources */,
 				6A68202E1C601D07008CBD6D /* BNRReminderViewController.xib in Resources */,
+				6AE7AB8B1C60258B0092FF8F /* Time.png in Resources */,
 				6A54938F1C5FF8A4007CE87F /* Assets.xcassets in Resources */,
+				6AE7AB8A1C60258B0092FF8F /* Hypno@2x.png in Resources */,
 				6A54938D1C5FF8A4007CE87F /* Main.storyboard in Resources */,
+				6AE7AB891C60258B0092FF8F /* Hypno.png in Resources */,
+				6AE7AB8C1C60258B0092FF8F /* Time@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

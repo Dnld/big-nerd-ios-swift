@@ -22,7 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let appBundle = NSBundle.mainBundle()
         let rvc = BNRReminderViewController(nibName: "BNRReminderViewController", bundle: appBundle)
         
-        window?.rootViewController = rvc
+        let tbc = UITabBarController()
+        tbc.viewControllers = [hvc, rvc]
+        
+        window?.rootViewController = tbc
         
         return true
     }
