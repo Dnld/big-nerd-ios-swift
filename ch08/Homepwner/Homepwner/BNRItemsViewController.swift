@@ -10,6 +10,8 @@ import UIKit
 
 class BNRItemsViewController: UITableViewController {
 
+    let sections = ["Inexpensive Items", "Expensive Items"]
+    
     init() {
         super.init(style: UITableViewStyle.Plain)
         for _ in 0 ..< 5 {
@@ -37,8 +39,17 @@ class BNRItemsViewController: UITableViewController {
         if indexPath.row < BNRItemStore.sharedStore.allItems.count {
             let item = BNRItemStore.sharedStore.allItems[indexPath.row]
             cell.textLabel?.text = item.description
+            cell.textLabel?.font = UIFont.systemFontOfSize(20)
         }
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row < BNRItemStore.sharedStore.allItems.count {
+            return 60
+        } else {
+            return 44
+        }
     }
     
 }
