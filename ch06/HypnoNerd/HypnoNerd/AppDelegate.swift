@@ -21,9 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let appBundle = NSBundle.mainBundle()
         let rvc = BNRReminderViewController(nibName: "BNRReminderViewController", bundle: appBundle)
-        
         let tbc = UITabBarController()
-        tbc.viewControllers = [hvc, rvc]
+        let qvc = BNRQuizViewController()
+        tbc.viewControllers = [hvc, rvc, qvc]
         
         window?.rootViewController = tbc
         
