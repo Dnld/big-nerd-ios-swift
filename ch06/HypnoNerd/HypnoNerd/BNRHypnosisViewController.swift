@@ -27,6 +27,7 @@ class BNRHypnosisViewController: UIViewController {
         let frame = UIScreen.mainScreen().bounds
         let backgroundView = BNRHypnosisView.init(frame: frame)
         view = backgroundView
+//        print("BNRHypnosisViewController loaded")
     }
 
     override func didReceiveMemoryWarning() {

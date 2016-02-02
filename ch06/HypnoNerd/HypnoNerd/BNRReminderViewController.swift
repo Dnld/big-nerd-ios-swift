@@ -36,8 +36,13 @@ class BNRReminderViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        print("BNRReminderViewController loaded")
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        datePicker?.minimumDate = NSDate(timeIntervalSinceNow: 60)
     }
 
     override func didReceiveMemoryWarning() {
