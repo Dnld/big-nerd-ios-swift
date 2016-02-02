@@ -25,6 +25,13 @@ class BNRReminderViewController: UIViewController {
     
     @IBAction func addReminder(sender: UIButton) {
         let date = self.datePicker!.date
+        print(date)
+        
+        let note = UILocalNotification()
+        note.alertBody = "Hypnotize me!"
+        note.fireDate = date
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(note)
     }
     
     override func viewDidLoad() {
