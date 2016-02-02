@@ -44,9 +44,29 @@ class BNRHypnosisViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if let text = textField.text {
-            print(text)
+            drawHypnoticMessage(text)
         }
+        textField.text = ""
+        textField.resignFirstResponder()
         return true
+    }
+    
+    func drawHypnoticMessage(message: String) {
+        for _ in 0 ..< 20 {
+            let messageLabel = UILabel()
+            messageLabel.backgroundColor = UIColor.clearColor()
+            messageLabel.textColor = UIColor.blackColor()
+            messageLabel.text = message
+            messageLabel.sizeToFit()
+            
+            let width = view.bounds.width - messageLabel.bounds.width
+            let x = CGFloat(arc4random()) % width
+            let height = view.bounds.height - messageLabel.bounds.height
+            let y = CGFloat(arc4random()) % height
+            
+            messageLabel.frame.origin = CGPointMake(x, y)
+            view.addSubview(messageLabel)
+        }
     }
 
 }
