@@ -21,12 +21,18 @@ class BNRItemsViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return BNRItemStore.sharedStore.allItems.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "UITableViewCell")
+//        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "UITableViewCell")
+        let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath: indexPath)
         let item = BNRItemStore.sharedStore.allItems[indexPath.row]
         cell.textLabel?.text = item.description
         return cell
