@@ -14,6 +14,7 @@
 		6A6BFF1A1C610A7F008F64F9 /* BNRItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BFF191C610A7F008F64F9 /* BNRItemsViewController.swift */; };
 		6A6BFF1C1C610B9B008F64F9 /* BNRItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BFF1B1C610B9B008F64F9 /* BNRItem.swift */; };
 		6A6BFF1E1C610FDD008F64F9 /* BNRItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BFF1D1C610FDD008F64F9 /* BNRItemStore.swift */; };
+		6A6BFF201C613451008F64F9 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6BFF1F1C613451008F64F9 /* HeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		6A6BFF191C610A7F008F64F9 /* BNRItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNRItemsViewController.swift; sourceTree = "<group>"; };
 		6A6BFF1B1C610B9B008F64F9 /* BNRItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNRItem.swift; sourceTree = "<group>"; };
 		6A6BFF1D1C610FDD008F64F9 /* BNRItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNRItemStore.swift; sourceTree = "<group>"; };
+		6A6BFF1F1C613451008F64F9 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				6A6BFF1B1C610B9B008F64F9 /* BNRItem.swift */,
 				6A6BFF1D1C610FDD008F64F9 /* BNRItemStore.swift */,
 				6A6BFF191C610A7F008F64F9 /* BNRItemsViewController.swift */,
+				6A6BFF1F1C613451008F64F9 /* HeaderView.xib */,
 				6A6BFF0B1C6108B5008F64F9 /* Main.storyboard */,
 				6A6BFF0E1C6108B5008F64F9 /* Assets.xcassets */,
 				6A6BFF101C6108B5008F64F9 /* LaunchScreen.storyboard */,
@@ -131,6 +134,7 @@
 				6A6BFF121C6108B5008F64F9 /* LaunchScreen.storyboard in Resources */,
 				6A6BFF0F1C6108B5008F64F9 /* Assets.xcassets in Resources */,
 				6A6BFF0D1C6108B5008F64F9 /* Main.storyboard in Resources */,
+				6A6BFF201C613451008F64F9 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

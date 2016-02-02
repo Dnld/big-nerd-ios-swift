@@ -9,14 +9,18 @@
 import UIKit
 
 class BNRItemsViewController: UITableViewController {
-
-    let sections = ["Inexpensive Items", "Expensive Items"]
+    
+    @IBOutlet var headerView: UIView?
     
     init() {
         super.init(style: UITableViewStyle.Plain)
         for _ in 0 ..< 5 {
             BNRItemStore.sharedStore.createItem()
         }
+        
+        let bundle = NSBundle.mainBundle()
+        headerView = bundle.loadNibNamed("HeaderView", owner: self, options: nil).first as? UIView
+        
         tableView.tableFooterView = UIView(frame: CGRectZero)
     }
 
@@ -27,6 +31,7 @@ class BNRItemsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
+        tableView.tableHeaderView = headerView
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,5 +56,15 @@ class BNRItemsViewController: UITableViewController {
             return 44
         }
     }
+}
+
+extension BNRItemsViewController {
     
+    @IBAction func addNewItem(sender: UIButton) {
+        
+    }
+    
+    @IBAction func toggleEditingMode(sender: UIButton) {
+        
+    }
 }
