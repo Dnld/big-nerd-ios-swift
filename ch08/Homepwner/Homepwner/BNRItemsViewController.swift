@@ -15,6 +15,7 @@ class BNRItemsViewController: UITableViewController {
         for _ in 0 ..< 5 {
             BNRItemStore.sharedStore.createItem()
         }
+        tableView.tableFooterView = UIView(frame: CGRectZero)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -27,14 +28,16 @@ class BNRItemsViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return BNRItemStore.sharedStore.allItems.count
+        return BNRItemStore.sharedStore.allItems.count + 1
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 //        let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "UITableViewCell")
         let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath: indexPath)
-        let item = BNRItemStore.sharedStore.allItems[indexPath.row]
-        cell.textLabel?.text = item.description
+        if indexPath.row < BNRItemStore.sharedStore.allItems.count {
+            let item = BNRItemStore.sharedStore.allItems[indexPath.row]
+            cell.textLabel?.text = item.description
+        }
         return cell
     }
     
