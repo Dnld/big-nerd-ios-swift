@@ -9,7 +9,7 @@
 import UIKit
 
 class BNRHypnosisViewController: UIViewController, UITextFieldDelegate {
-
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         tabBarItem.title = "Hypnotize"
@@ -77,6 +77,6 @@ class BNRHypnosisViewController: UIViewController, UITextFieldDelegate {
             messageLabel.addMotionEffect(motionEffect)
         }
     }
-
+    
 }
 

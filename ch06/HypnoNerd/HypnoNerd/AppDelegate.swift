@@ -9,15 +9,19 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UIScrollViewDelegate {
 
     var window: UIWindow?
-
+    let hvc = BNRHypnosisViewController()
+    var hypnosisView = UIScrollView()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch
         window?.backgroundColor = UIColor.whiteColor()
-        let hvc = BNRHypnosisViewController()
+        hypnosisView.addSubview(hvc.view)
+        hypnosisView.delegate = self
+        hypnosisView.maximumZoomScale = 2.0
+        hypnosisView.minimumZoomScale = 0.25
         
         let appBundle = NSBundle.mainBundle()
         let rvc = BNRReminderViewController(nibName: "BNRReminderViewController", bundle: appBundle)
@@ -55,6 +59,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return hypnosisView.subviews.first
+    }
 
 }
 
