@@ -31,6 +31,9 @@ class BNRItemStore: NSObject {
     }
     
     func moveItemAtIndex(fromIndex: Int, toIndex: Int) {
+        if toIndex == privateItems.count {
+            return
+        }
         let temp = privateItems[fromIndex]
         privateItems.removeAtIndex(fromIndex)
         privateItems.insert(temp, atIndex: toIndex)

@@ -42,6 +42,8 @@ class BNRItemsViewController: UITableViewController {
             let item = BNRItemStore.sharedStore.allItems[indexPath.row]
             cell.textLabel?.text = item.description
             cell.textLabel?.font = UIFont.systemFontOfSize(20)
+        } else {
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
         }
         return cell
     }
@@ -76,6 +78,11 @@ extension BNRItemsViewController {
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if indexPath.row == BNRItemStore.sharedStore.allItems.count {
+            return
+        }
+
         if editingStyle == UITableViewCellEditingStyle.Delete {
             let item = BNRItemStore.sharedStore.allItems[indexPath.row]
             BNRItemStore.sharedStore.removeItem(item)
@@ -84,14 +91,49 @@ extension BNRItemsViewController {
     }
     
     override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
-        if sourceIndexPath == destinationIndexPath {
+        let lastItemIndex = BNRItemStore.sharedStore.allItems.count + 1
+        if sourceIndexPath == destinationIndexPath || sourceIndexPath.row == lastItemIndex {
             return
         }
+        if destinationIndexPath.row == lastItemIndex {
+            BNRItemStore.sharedStore.moveItemAtIndex(sourceIndexPath.row, toIndex: sourceIndexPath.row)
+        }
         BNRItemStore.sharedStore.moveItemAtIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
+    }
+    
+    override func tableView(tableView: UITableView, targetIndexPathForMoveFromRowAtIndexPath sourceIndexPath: NSIndexPath, toProposedIndexPath proposedDestinationIndexPath: NSIndexPath) -> NSIndexPath {
+        if sourceIndexPath.section != proposedDestinationIndexPath.section {
+            return sourceIndexPath
+        } else {
+            return proposedDestinationIndexPath
+        }
     }
     
     override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
         return "Remove"
     }
     
+    override func tableView(tableView: UITableView, canPerformAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
+        if indexPath.row == BNRItemStore.sharedStore.allItems.count {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if indexPath.row == BNRItemStore.sharedStore.allItems.count {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        if indexPath.row == BNRItemStore.sharedStore.allItems.count {
+            return false
+        } else {
+            return true
+        }
+    }
 }
