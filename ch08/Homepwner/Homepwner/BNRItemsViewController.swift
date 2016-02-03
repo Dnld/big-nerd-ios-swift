@@ -14,9 +14,6 @@ class BNRItemsViewController: UITableViewController {
     
     init() {
         super.init(style: UITableViewStyle.Plain)
-        for _ in 0 ..< 5 {
-            BNRItemStore.sharedStore.createItem()
-        }
         
         let bundle = NSBundle.mainBundle()
         headerView = bundle.loadNibNamed("HeaderView", owner: self, options: nil).first as? UIView
@@ -75,6 +72,14 @@ extension BNRItemsViewController {
         } else {
             sender.setTitle("Done", forState: UIControlState.Normal)
             setEditing(true, animated: true)
+        }
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            let item = BNRItemStore.sharedStore.allItems[indexPath.row]
+            BNRItemStore.sharedStore.removeItem(item)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
     }
 }

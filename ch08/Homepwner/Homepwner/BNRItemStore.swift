@@ -24,4 +24,10 @@ class BNRItemStore: NSObject {
         return item
     }
     
+    func removeItem(item: BNRItem) {
+        if let index = privateItems.indexOf(item) {
+            privateItems.removeAtIndex(index)
+        }
+    }
+    
 }
