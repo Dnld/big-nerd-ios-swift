@@ -135,8 +135,8 @@ extension BNRItemsViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let detailViewController = BNRDetailViewController()
+        let item = BNRItemStore.sharedStore.allItems[indexPath.row]
+        let detailViewController = BNRDetailViewController(withItem: item)
         navigationController?.pushViewController(detailViewController, animated: true)
-        
     }
 }
