@@ -88,7 +88,10 @@ extension BNRItemsViewController {
             return
         }
         BNRItemStore.sharedStore.moveItemAtIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
-        
+    }
+    
+    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
+        return "Remove"
     }
     
 }
