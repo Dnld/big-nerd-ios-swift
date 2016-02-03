@@ -92,11 +92,8 @@ extension BNRItemsViewController {
     
     override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
         let lastItemIndex = BNRItemStore.sharedStore.allItems.count + 1
-        if sourceIndexPath == destinationIndexPath || sourceIndexPath.row == lastItemIndex {
+        if sourceIndexPath == destinationIndexPath || destinationIndexPath.row == lastItemIndex {
             return
-        }
-        if destinationIndexPath.row == lastItemIndex {
-            BNRItemStore.sharedStore.moveItemAtIndex(sourceIndexPath.row, toIndex: sourceIndexPath.row)
         }
         BNRItemStore.sharedStore.moveItemAtIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     }
