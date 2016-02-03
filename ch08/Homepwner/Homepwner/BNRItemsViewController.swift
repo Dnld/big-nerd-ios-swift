@@ -65,6 +65,12 @@ extension BNRItemsViewController {
     }
     
     @IBAction func toggleEditingMode(sender: UIButton) {
-        
+        if editing {
+            sender.setTitle("Edit", forState: UIControlState.Normal)
+            setEditing(false, animated: true)
+        } else {
+            sender.setTitle("Done", forState: UIControlState.Normal)
+            setEditing(true, animated: true)
+        }
     }
 }
