@@ -17,6 +17,8 @@
 		6A6BFF201C613451008F64F9 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6BFF1F1C613451008F64F9 /* HeaderView.xib */; };
 		6A6BFF231C628460008F64F9 /* BNRDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BFF211C628460008F64F9 /* BNRDetailViewController.swift */; };
 		6A6BFF241C628460008F64F9 /* BNRDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6BFF221C628460008F64F9 /* BNRDetailViewController.xib */; };
+		6A6BFF271C62B591008F64F9 /* BNRItemDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6BFF251C62B591008F64F9 /* BNRItemDateViewController.swift */; };
+		6A6BFF281C62B591008F64F9 /* BNRItemDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A6BFF261C62B591008F64F9 /* BNRItemDateViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		6A6BFF1F1C613451008F64F9 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		6A6BFF211C628460008F64F9 /* BNRDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNRDetailViewController.swift; sourceTree = "<group>"; };
 		6A6BFF221C628460008F64F9 /* BNRDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRDetailViewController.xib; sourceTree = "<group>"; };
+		6A6BFF251C62B591008F64F9 /* BNRItemDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BNRItemDateViewController.swift; sourceTree = "<group>"; };
+		6A6BFF261C62B591008F64F9 /* BNRItemDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRItemDateViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				6A6BFF1D1C610FDD008F64F9 /* BNRItemStore.swift */,
 				6A6BFF191C610A7F008F64F9 /* BNRItemsViewController.swift */,
 				6A6BFF211C628460008F64F9 /* BNRDetailViewController.swift */,
+				6A6BFF251C62B591008F64F9 /* BNRItemDateViewController.swift */,
+				6A6BFF261C62B591008F64F9 /* BNRItemDateViewController.xib */,
 				6A6BFF221C628460008F64F9 /* BNRDetailViewController.xib */,
 				6A6BFF101C6108B5008F64F9 /* LaunchScreen.storyboard */,
 				6A6BFF1F1C613451008F64F9 /* HeaderView.xib */,
@@ -137,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A6BFF281C62B591008F64F9 /* BNRItemDateViewController.xib in Resources */,
 				6A6BFF121C6108B5008F64F9 /* LaunchScreen.storyboard in Resources */,
 				6A6BFF0F1C6108B5008F64F9 /* Assets.xcassets in Resources */,
 				6A6BFF0D1C6108B5008F64F9 /* Main.storyboard in Resources */,
@@ -154,6 +161,7 @@
 			files = (
 				6A6BFF1C1C610B9B008F64F9 /* BNRItem.swift in Sources */,
 				6A6BFF231C628460008F64F9 /* BNRDetailViewController.swift in Sources */,
+				6A6BFF271C62B591008F64F9 /* BNRItemDateViewController.swift in Sources */,
 				6A6BFF081C6108B5008F64F9 /* AppDelegate.swift in Sources */,
 				6A6BFF1E1C610FDD008F64F9 /* BNRItemStore.swift in Sources */,
 				6A6BFF1A1C610A7F008F64F9 /* BNRItemsViewController.swift in Sources */,

@@ -53,6 +53,10 @@ class BNRDetailViewController: UIViewController {
         }
     }
     
+    @IBAction func editDate(sender: UIButton) {
+        let itemDateView = BNRItemDateViewController(withItem: item)
+        navigationController?.pushViewController(itemDateView, animated: true)
+    }
     // this ends editing when user taps outside displayed keyboard
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)

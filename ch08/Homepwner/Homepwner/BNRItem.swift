@@ -13,7 +13,7 @@ class BNRItem: NSObject {
     var name: String
     var serialNumber: String
     var valueInDollars: Int
-    let date: NSDate
+    var date: NSDate
     
     override var description: String {
         return "Item: \(name), with serial number: \(serialNumber), is worth $\(valueInDollars) and was created on \(date)"
