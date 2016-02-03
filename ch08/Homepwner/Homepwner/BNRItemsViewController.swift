@@ -31,6 +31,11 @@ class BNRItemsViewController: UITableViewController {
         tableView.tableHeaderView = headerView
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return BNRItemStore.sharedStore.allItems.count + 1
     }

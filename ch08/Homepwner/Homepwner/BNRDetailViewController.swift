@@ -40,4 +40,15 @@ class BNRDetailViewController: UIViewController {
         dateLabel.text = dateFormatter.stringFromDate(item.date)
     }
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        view.endEditing(true)
+        
+        item.name = nameField.text!
+        item.serialNumber = serialField.text!
+        if let newValue = Int(valueField.text!) {
+            item.valueInDollars = newValue
+        }
+    }
+    
 }
