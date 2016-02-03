@@ -18,9 +18,11 @@ class BNRDetailViewController: UIViewController {
     var item: BNRItem!
     
     init(withItem item: BNRItem) {
-        self.item = item
         let bundle = NSBundle.mainBundle()
         super.init(nibName: "BNRDetailViewController", bundle: bundle)
+        
+        self.item = item
+        self.navigationItem.title = item.name
     }
 
     required init?(coder aDecoder: NSCoder) {

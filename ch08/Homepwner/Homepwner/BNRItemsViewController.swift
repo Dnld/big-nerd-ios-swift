@@ -15,9 +15,13 @@ class BNRItemsViewController: UITableViewController {
     init() {
         super.init(style: UITableViewStyle.Plain)
         
-        let bundle = NSBundle.mainBundle()
-        headerView = bundle.loadNibNamed("HeaderView", owner: self, options: nil).first as? UIView
+        self.navigationItem.title = "Items"
+        
+        self.navigationItem.leftBarButtonItem = editButtonItem()
 
+        let newItemButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "addNewItem:")
+        self.navigationItem.rightBarButtonItem = newItemButton
+        
         tableView.tableFooterView = UIView(frame: CGRectZero)
     }
 
@@ -28,7 +32,6 @@ class BNRItemsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "UITableViewCell")
-        tableView.tableHeaderView = headerView
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -69,16 +72,6 @@ extension BNRItemsViewController {
         if let lastRow = BNRItemStore.sharedStore.allItems.indexOf(newItem) {
             let indexPath = NSIndexPath(forRow: lastRow, inSection: 0)
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Top)
-        }
-    }
-    
-    @IBAction func toggleEditingMode(sender: UIButton) {
-        if editing {
-            sender.setTitle("Edit", forState: UIControlState.Normal)
-            setEditing(false, animated: true)
-        } else {
-            sender.setTitle("Done", forState: UIControlState.Normal)
-            setEditing(true, animated: true)
         }
     }
     
