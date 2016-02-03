@@ -30,4 +30,10 @@ class BNRItemStore: NSObject {
         }
     }
     
+    func moveItemAtIndex(fromIndex: Int, toIndex: Int) {
+        let temp = privateItems[fromIndex]
+        privateItems.removeAtIndex(fromIndex)
+        privateItems.insert(temp, atIndex: toIndex)
+    }
+    
 }
