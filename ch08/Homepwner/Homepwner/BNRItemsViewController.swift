@@ -61,7 +61,11 @@ class BNRItemsViewController: UITableViewController {
 extension BNRItemsViewController {
     
     @IBAction func addNewItem(sender: UIButton) {
-        
+        let newItem = BNRItemStore.sharedStore.createItem()
+        if let lastRow = BNRItemStore.sharedStore.allItems.indexOf(newItem) {
+            let indexPath = NSIndexPath(forRow: lastRow, inSection: 0)
+            tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Top)
+        }
     }
     
     @IBAction func toggleEditingMode(sender: UIButton) {
