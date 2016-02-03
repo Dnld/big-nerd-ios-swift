@@ -69,11 +69,11 @@
 				6A6BFF1D1C610FDD008F64F9 /* BNRItemStore.swift */,
 				6A6BFF191C610A7F008F64F9 /* BNRItemsViewController.swift */,
 				6A6BFF211C628460008F64F9 /* BNRDetailViewController.swift */,
+				6A6BFF221C628460008F64F9 /* BNRDetailViewController.xib */,
 				6A6BFF101C6108B5008F64F9 /* LaunchScreen.storyboard */,
 				6A6BFF1F1C613451008F64F9 /* HeaderView.xib */,
 				6A6BFF0B1C6108B5008F64F9 /* Main.storyboard */,
 				6A6BFF0E1C6108B5008F64F9 /* Assets.xcassets */,
-				6A6BFF221C628460008F64F9 /* BNRDetailViewController.xib */,
 				6A6BFF131C6108B5008F64F9 /* Info.plist */,
 			);
 			path = Homepwner;

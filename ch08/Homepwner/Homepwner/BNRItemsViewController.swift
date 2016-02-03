@@ -17,7 +17,7 @@ class BNRItemsViewController: UITableViewController {
         
         let bundle = NSBundle.mainBundle()
         headerView = bundle.loadNibNamed("HeaderView", owner: self, options: nil).first as? UIView
-        
+
         tableView.tableFooterView = UIView(frame: CGRectZero)
     }
 
@@ -132,5 +132,11 @@ extension BNRItemsViewController {
         } else {
             return true
         }
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let detailViewController = BNRDetailViewController()
+        navigationController?.pushViewController(detailViewController, animated: true)
+        
     }
 }
