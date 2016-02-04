@@ -25,7 +25,12 @@ class BNRItemDateViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewWillAppear(animated: Bool) {
+//    override func viewWillAppear(animated: Bool) {
+//        datePicker.date = item.date
+//    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
         datePicker.date = item.date
     }
     
