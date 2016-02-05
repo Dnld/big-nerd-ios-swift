@@ -14,6 +14,7 @@ class BNRItem: NSObject {
     var serialNumber: String
     var valueInDollars: Int
     var date: NSDate
+    var itemKey: String
     
     override var description: String {
         return "Item: \(name), with serial number: \(serialNumber), is worth $\(valueInDollars) and was created on \(date)"
@@ -24,6 +25,9 @@ class BNRItem: NSObject {
         self.serialNumber = serialNumber
         self.valueInDollars = valueInDollars
         date = NSDate()
+        
+        let uuid = NSUUID()
+        itemKey = uuid.UUIDString
     }
     
     convenience init(name: String) {

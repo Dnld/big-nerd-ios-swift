@@ -42,6 +42,10 @@ class BNRDetailViewController: UIViewController, UINavigationControllerDelegate,
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
         dateLabel.text = dateFormatter.stringFromDate(item.date)
+        
+        if let image = BNRImageStore.sharedStore.imageForKey(item.itemKey) {
+           imageView.image = image   
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -79,9 +83,11 @@ class BNRDetailViewController: UIViewController, UINavigationControllerDelegate,
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        
+        BNRImageStore.sharedStore.setImage(image!, forKey: item.itemKey)
+        
         imageView.image = image
         dismissViewControllerAnimated(true, completion: nil)
-        
     }
     
 }

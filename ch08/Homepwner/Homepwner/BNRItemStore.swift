@@ -26,6 +26,7 @@ class BNRItemStore: NSObject {
     
     func removeItem(item: BNRItem) {
         if let index = privateItems.indexOf(item) {
+            BNRImageStore.sharedStore.deleteImageForKey(item.itemKey)
             privateItems.removeAtIndex(index)
         }
     }
