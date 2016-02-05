@@ -10,4 +10,7 @@ import UIKit
 
 class BNRLine: NSObject {
 
+    var begin: CGPoint!
+    var end: CGPoint!
+    
 }

@@ -19,8 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let dvc = BNRDrawViewController()
         window?.rootViewController = dvc
-        window?.backgroundColor = UIColor.whiteColor()
-        window?.makeKeyAndVisible()
         
         return true
     }
