@@ -8,12 +8,14 @@
 
 import UIKit
 
-class BNRDetailViewController: UIViewController {
+class BNRDetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var serialField: UITextField!
     @IBOutlet weak var valueField: UITextField!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var toolbar: UIToolbar!
 
     var item: BNRItem!
     
@@ -61,4 +63,25 @@ class BNRDetailViewController: UIViewController {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         view.endEditing(true)
     }
+    
+    @IBAction func takePicture(sender: AnyObject) {
+        let imagePicker = UIImagePickerController()
+        
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        } else {
+            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        }
+        
+        imagePicker.delegate = self
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let image = info[UIImagePickerControllerOriginalImage] as? UIImage
+        imageView.image = image
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    
 }

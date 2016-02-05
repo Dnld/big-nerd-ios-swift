@@ -8,8 +8,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BNRDetailViewController" customModule="Homepwner" customModuleProvider="target">
             <connections>
                 <outlet property="dateLabel" destination="i0f-E0-Otj" id="hhs-Gl-gJA"/>
+                <outlet property="imageView" destination="uqS-VH-Mjy" id="m52-oh-kUs"/>
                 <outlet property="nameField" destination="pEl-f2-ogj" id="fLU-Hq-MfY"/>
                 <outlet property="serialField" destination="tiN-1k-83h" id="uov-kB-UxH"/>
+                <outlet property="toolbar" destination="UsY-T5-SPE" id="gnU-iR-5Uv"/>
                 <outlet property="valueField" destination="0EI-g8-pfT" id="SS8-i4-OCS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -32,7 +34,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-oZ-dct">
-                    <rect key="frame" x="10" y="154" width="42" height="20.5"/>
+                    <rect key="frame" x="10" y="155" width="42" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
@@ -65,6 +67,27 @@
                         <action selector="editDate:" destination="-1" eventType="touchUpInside" id="Pko-jn-h5K"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uqS-VH-Mjy">
+                    <rect key="frame" x="10" y="255" width="582" height="285"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="233" id="VHg-p9-n6y"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="VHg-p9-n6y"/>
+                        </mask>
+                    </variation>
+                </imageView>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UsY-T5-SPE">
+                    <rect key="frame" x="10" y="548" width="582" height="44"/>
+                    <items>
+                        <barButtonItem systemItem="camera" id="NFJ-GT-EjG">
+                            <connections>
+                                <action selector="takePicture:" destination="-1" id="Iuz-2v-jtK"/>
+                            </connections>
+                        </barButtonItem>
+                    </items>
+                </toolbar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -78,13 +101,20 @@
                 <constraint firstItem="pEl-f2-ogj" firstAttribute="leading" secondItem="nB3-8Z-tkh" secondAttribute="trailing" constant="8" id="AHy-I1-LhA"/>
                 <constraint firstItem="nB3-8Z-tkh" firstAttribute="baseline" secondItem="pEl-f2-ogj" secondAttribute="baseline" id="Bj7-3N-uKi"/>
                 <constraint firstItem="Hig-oZ-dct" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Bmc-7h-GxM"/>
+                <constraint firstItem="uqS-VH-Mjy" firstAttribute="leading" secondItem="dwF-hZ-uiJ" secondAttribute="leading" id="C84-eY-5DL"/>
                 <constraint firstItem="0EI-g8-pfT" firstAttribute="baseline" secondItem="Hig-oZ-dct" secondAttribute="baseline" id="Cmr-Il-Gu8"/>
+                <constraint firstItem="UsY-T5-SPE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="J22-EZ-ZPj"/>
                 <constraint firstItem="0EI-g8-pfT" firstAttribute="leading" secondItem="Hig-oZ-dct" secondAttribute="trailing" constant="9" id="KYs-Ev-lMl"/>
                 <constraint firstItem="i0f-E0-Otj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Ml4-Sv-vMU"/>
+                <constraint firstAttribute="bottom" secondItem="UsY-T5-SPE" secondAttribute="bottom" constant="8" id="OZc-Md-gNd"/>
                 <constraint firstItem="nB3-8Z-tkh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="79" id="S7V-CP-EH0"/>
                 <constraint firstAttribute="trailing" secondItem="i0f-E0-Otj" secondAttribute="trailing" constant="8" id="SA2-Fy-WEt"/>
                 <constraint firstItem="tiN-1k-83h" firstAttribute="leading" secondItem="ysA-cx-sfa" secondAttribute="trailing" constant="8" id="THC-dD-K5y"/>
                 <constraint firstItem="dwF-hZ-uiJ" firstAttribute="top" secondItem="i0f-E0-Otj" secondAttribute="bottom" constant="7.5" id="Uyv-GS-z3v"/>
+                <constraint firstItem="uqS-VH-Mjy" firstAttribute="top" secondItem="dwF-hZ-uiJ" secondAttribute="bottom" constant="8" symbolic="YES" id="ckL-IC-2I9"/>
+                <constraint firstItem="UsY-T5-SPE" firstAttribute="top" secondItem="uqS-VH-Mjy" secondAttribute="bottom" constant="8" id="dtz-bd-d0x"/>
+                <constraint firstItem="uqS-VH-Mjy" firstAttribute="trailing" secondItem="dwF-hZ-uiJ" secondAttribute="trailing" id="enJ-l5-zO2"/>
+                <constraint firstAttribute="trailing" secondItem="UsY-T5-SPE" secondAttribute="trailing" constant="8" id="fTU-Bi-EKA"/>
                 <constraint firstItem="tiN-1k-83h" firstAttribute="top" secondItem="pEl-f2-ogj" secondAttribute="bottom" constant="9" id="gGG-t1-z2K"/>
                 <constraint firstItem="dwF-hZ-uiJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="l4f-P5-JOG"/>
                 <constraint firstItem="0EI-g8-pfT" firstAttribute="top" secondItem="tiN-1k-83h" secondAttribute="bottom" constant="7" id="qCF-vi-SyS"/>
