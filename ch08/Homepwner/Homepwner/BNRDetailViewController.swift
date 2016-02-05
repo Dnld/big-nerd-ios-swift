@@ -90,6 +90,13 @@ class BNRDetailViewController: UIViewController, UINavigationControllerDelegate,
         dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func deleteImage(sender: UIButton) {
+        if let _ = imageView.image {
+            imageView.image = nil
+            BNRImageStore.sharedStore.deleteImageForKey(item.itemKey)
+        }
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
