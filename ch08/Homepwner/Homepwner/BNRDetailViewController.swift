@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BNRDetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class BNRDetailViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var serialField: UITextField!
@@ -44,7 +44,7 @@ class BNRDetailViewController: UIViewController, UINavigationControllerDelegate,
         dateLabel.text = dateFormatter.stringFromDate(item.date)
         
         if let image = BNRImageStore.sharedStore.imageForKey(item.itemKey) {
-           imageView.image = image   
+           imageView.image = image
         }
     }
     
@@ -88,6 +88,11 @@ class BNRDetailViewController: UIViewController, UINavigationControllerDelegate,
         
         imageView.image = image
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }
