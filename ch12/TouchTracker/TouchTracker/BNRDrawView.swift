@@ -10,10 +10,11 @@ import UIKit
 
 class BNRDrawView: UIView {
 
-    var currentLine: BNRLine?
+    var linesInProgress: [NSValue: BNRLine]
     var finishedLines: [BNRLine]
     
     override init(frame r: CGRect) {
+        linesInProgress = [NSValue: BNRLine]()
         finishedLines = [BNRLine]()
         super.init(frame: r)
         backgroundColor = UIColor.grayColor()
@@ -41,38 +42,72 @@ class BNRDrawView: UIView {
             strokeLine(line)
         }
         
-        if let currentLine = self.currentLine {
-            UIColor.redColor().set()
-            strokeLine(currentLine)
+        UIColor.redColor().set()
+        for (_, line) in linesInProgress {
+            strokeLine(line)
         }
     
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let t = touches.first
-        let location = t?.locationInView(self)
-        currentLine = BNRLine()
-        currentLine?.begin = location!
-        currentLine?.end = location!
+
+        for t in touches {
+            let location = t.locationInView(self)
+            let line = BNRLine()
+            line.begin = location
+            line.end = location
+            
+            let key = NSValue(nonretainedObject: t)
+            linesInProgress[key] = line
+        }
+        
+//        let t = touches.first
+//        let location = t?.locationInView(self)
+//        currentLine = BNRLine()
+//        currentLine?.begin = location!
+//        currentLine?.end = location!
         
         setNeedsDisplay()
     }
 
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        let t = touches.first
-        let location = t?.locationInView(self)
-        currentLine?.end = location
+        
+        for t in touches {
+            let key = NSValue(nonretainedObject: t)
+            if let line = linesInProgress[key] {
+                line.end = t.locationInView(self)
+            }
+        }
+        
+//        let t = touches.first
+//        let location = t?.locationInView(self)
+//        currentLine?.end = location
         setNeedsDisplay()
     }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-        if let finishedLine = currentLine {
-            finishedLines.append(finishedLine)
+
+        for t in touches {
+            let key = NSValue(nonretainedObject: t)
+            if let line = linesInProgress[key] {
+                finishedLines.append(line)
+                linesInProgress.removeValueForKey(key)
+            }
         }
         
-        currentLine = nil
+//        if let finishedLine = currentLine {
+//            finishedLines.append(finishedLine)
+//        }
+//        
+//        currentLine = nil
         setNeedsDisplay()
+    }
+    
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        for touch in touches! {
+            let key = NSValue(nonretainedObject: touch)
+            linesInProgress.removeValueForKey(key)
+        }
     }
     
 }
